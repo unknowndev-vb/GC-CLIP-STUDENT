@@ -1,0 +1,11 @@
+<mat-toolbar>
+    <mat-toolbar-row class="justify-content-between">
+        <button mat-icon-button (click)="toggleSideBar()"><mat-icon id="menu">menu</mat-icon></button>
+        <button type="submit" (click)="logout()" mat-icon-button #tooltip="matTooltip"
+        matTooltip="Logout"
+        matTooltipPosition="right"><mat-icon id="power_settings_new">power_settings_new</mat-icon></button>
+        <div class="row mr-2 ml-auto">
+            <img src="/assets/images/Logo/applogo.png" alt="GCCLIP Logo" id="logo">
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

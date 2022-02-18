@@ -1,0 +1,174 @@
+h1, h2, h3, h4, h5, h6, p, mat-card-title, mat-card-subtitle{
+    font-family: 'Quattrocento Sans';
+}
+
+.fullscreen{
+    max-height: 100%;
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#main{
+    background-image: url('https://image.freepik.com/free-vector/white-clean-hexagonal-medical-concept_1017-29801.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed!important;
+    opacity: 70%;
+    position: fixed!important;
+    z-index: -1;
+    top: 0;
+}
+#black{
+    background-color: #334e5c;
+    position: fixed!important;
+    opacity: 4%;
+    z-index: -1;
+    top: 0;
+}
+
+.hide{
+    margin-bottom: -250px;
+    transition: margin-bottom 0.5s ease-in-out;
+    display: none;
+}
+
+.options-holder{
+    ::ng-deep .radio-group {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+        width: 50%;
+    }
+      
+    ::ng-deep .radio-button {
+    margin: 5px;
+    width: 100%;
+        
+        img{
+            height: 50px;
+            width: auto;
+        }
+
+        ::ng-deep span.mat-radio-label-content{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+}
+
+#actions{
+    position: fixed;
+    // flex-direction: column;
+    justify-content: flex-start;
+    top: 0;
+    right: 0;
+    background-color: #334e5c;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    width: 8%;
+    padding: 8px;
+    padding-left: 35px;
+    z-index: 1;
+    margin-top: 16px;
+
+    ::ng-deep .mat-raised-button#btn-leave{
+        padding: 0 10px;
+        min-width: 44px;
+        opacity: 90%;
+    }
+}
+
+.slides{
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
+}
+
+#card-content{
+    flex-direction: column;
+    height: 100%;
+    width: 90%;
+    margin: 1em auto;
+    padding: 3em;
+
+    mat-card-title{
+        font-weight: bold;
+        font-size: 1.8em;
+        // color: #000;
+        margin-bottom: 0;
+    }
+
+    mat-card-subtitle{
+        font-size: 1.2em;
+    }
+
+    mat-card-content {
+        margin-top: 3em;
+
+        h6{
+            font-weight: 600;
+            font-size: 1.5em;
+            // color: #000;
+        }
+        p{
+            font-size: 1.2em;
+            // color: #000;
+        }
+    }
+}
+
+#fixed-form{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+
+    #form{
+        width: 30vw;
+        height: 36vh;
+        flex-direction: column;
+        row-gap: 1em;
+        background: #fff;
+        box-shadow: 0px -2px 16px -10px rgba(0,0,0,1);
+        border-radius: 10px;
+
+        textarea#response-input {
+            width: 24vw!important;
+            height: 14vh!important;
+            width: 75%;
+            text-align: left;
+            font-family: 'Poppins';
+            border-radius: 0;
+            border: 2px solid #1BBB94;
+            padding: 10px;
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.15em;
+            color: #000;
+            &:focus-visible{
+                border-color: #007BFF;
+            }
+        }
+        
+        #btn-response{
+            border-radius: 0;
+            box-shadow: 4px 4px 0px 0px rgba(50, 50, 50, 1);
+            background-color: #1BBB94;
+            padding: 2px 30px;
+            color: #fff;
+            text-transform: uppercase;
+            font-family: 'Quattrocento Sans';
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            font-size: 0.75em;
+            cursor: pointer;
+            &:hover{
+                background-color: #007BFF;
+            }
+        }
+    }
+}

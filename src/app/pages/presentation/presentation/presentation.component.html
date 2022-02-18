@@ -1,0 +1,73 @@
+<div id="main" class="fullscreen"></div>
+<div id="black" class="fullscreen"></div>
+
+<div id="actions" class="d-flex align-items-center">
+    <button mat-raised-button (click)="leaveRoom()" id="btn-leave" color="warn"
+    #tooltip="matTooltip"
+    matTooltip="Leave"
+    matTooltipPosition="left"><mat-icon>exit_to_app</mat-icon></button>
+</div>
+
+<div class="d-flex justify-content-center align-items-center slides">
+    <mat-card [style.background-color] = "presTheme" [style.color] = "presFont" id="card-content" class="d-flex justify-content-left">
+        <mat-card-title *ngIf="stype !== 'sa'">{{heading}}</mat-card-title>
+        <mat-card-title *ngIf="stype === 'sa'"> 
+        <span>
+            Question: 
+        </span>
+        <span  *ngIf="!countDown">
+            {{heading}}
+        </span></mat-card-title>
+
+        <mat-card-content>
+        <p class="text-justify">{{paragraph}}</p>
+    
+        <img *ngIf="image" [src]="this._us.imageLink+image" class="img-thumbnail" >
+      
+        <div *ngIf = "stype !== 'heading' || 'paragraph'" class="options-holder d-flex justify-content-left">
+            <ng-container  *ngIf="stype === 'sa'; else other">
+
+
+                <h1 *ngIf="countDown">{{countDown}}</h1>
+                <h1 *ngIf="slideTimer">{{slideTimer}}</h1>
+                <mat-radio-group class="radio-group"  *ngIf="!countDown">
+                    <mat-radio-button class="radio-button" *ngFor="let item of showOptions;" [disabled]="!slideTimer" [value]="item.choice_fld">
+                        {{item.choice_fld}}
+                        <img *ngIf="item.image_fld" [src]="this._us.imageLink+item.image_fld" class="img-thumbnail" >
+                        <!-- <img [src]="i" alt="Random second slide" class="img-thumbnail"> -->
+                    </mat-radio-button>
+                </mat-radio-group>
+            </ng-container>
+     
+          
+
+            <ng-template  #other>
+                <mat-radio-group  class="radio-group">
+                <mat-radio-button class="radio-button" *ngFor="let item of showOptions;">
+                    {{item.choice_fld}}
+                    <img *ngIf="item.image_fld" [src]="this._us.imageLink+item.image_fld" class="img-thumbnail" >
+                </mat-radio-button>
+                </mat-radio-group>
+            </ng-template>
+            
+        </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div id="fixed-form" class="d-flex justify-content-center align-items-center" *ngIf="stype === 'qa'" >
+    <div id="form" class="d-flex align-items-center justify-content-center">
+        <div id="input">
+            <textarea [(ngModel)]="sendRes" id="response-input" placeholder="Type here..."
+                    matInput
+                    cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="5" required></textarea>
+        </div>
+        <div id="btn">
+            <button type="submit" (click)="sendResponse()" mat-raised-button id="btn-response">Send</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+h1, h2, h3, h4, h5, h6, p, mat-card-title, mat-card-subtitle{
+    font-family: 'Poppins';
+}
+
+.fullscreen{
+    max-height: 100%;
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#main{
+    background-image: url('https://image.freepik.com/free-vector/white-clean-hexagonal-medical-concept_1017-29801.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed!important;
+    opacity: 70%;
+    position: fixed!important;
+    z-index: -1;
+    top: 0;
+}
+#black{
+    background-color: #334e5c;
+    position: fixed!important;
+    opacity: 4%;
+    z-index: -1;
+    top: 0;
+}
+
+#progress{
+    width: 90%;
+    padding: 14px;
+}
+
+.slides{
+    width: 100%;
+    height: 95%;
+}
+#card-content{
+    flex-direction: column;
+    height: 95%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 3em;
+
+    mat-card-title{
+        font-weight: bold;
+        font-size: 1.8em;
+        // color: #000;
+        margin-bottom: 0;
+    }
+
+    mat-card-subtitle{
+        font-size: 1.2em;
+    }
+
+    mat-card-content {
+        margin-top: 3em;
+
+        h6{
+            font-weight: 600;
+            font-size: 1.5em;
+            // color: #000;
+        }
+        p{
+            font-size: 1.2em;
+            // color: #000;
+        }
+    }
+}
+

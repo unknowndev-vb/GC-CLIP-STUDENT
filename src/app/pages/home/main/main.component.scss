@@ -1,0 +1,51 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+mat-drawer{
+    width: 10%;
+    background-color: #0166B3;
+    border-radius: 0 15px 15px 0;
+}
+
+mat-drawer-container{
+    height: 100%;
+    // background-color: rgb(241, 241, 241);
+    background-color: #F0F2F5;
+}
+
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    mat-drawer{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    mat-drawer{
+        width: 25%;
+    }
+}
+@media screen and (max-width: 500px) and (orientation: landscape) {
+    mat-drawer{
+        width: 35%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    mat-drawer{
+        width: 20%;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1299px){
+    mat-drawer{
+        width: 15%;
+    }
+}
+@media screen and (min-width: 1300){
+    mat-drawer{
+        width: 12%;
+    }
+}

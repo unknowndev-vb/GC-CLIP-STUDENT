@@ -1,0 +1,74 @@
+<div id="main" class="fullscreen">
+</div>
+
+<div class="cont">
+    <div *ngFor='let in of counter(100) ;let i = index' class="circle-container">
+        <div class="circle"></div>
+</div>
+</div>
+
+
+<div id="content" class="d-flex justify-content-around align-items-center">
+    <div id="left-side" class="d-flex justify-content-center align-items-center flex-column">
+        <div id="images" class="d-flex flex-row">
+            <div id="img-box" class="d-flex">
+                <img src="assets/images/Logo/applogo.png" alt="">
+            </div>
+            <!-- <div id="img-box" class="d-flex">
+                <img src="assets/images/Logo/applogo.png" alt="">
+            </div> -->
+        </div>
+        <div id="title" class="d-flex">
+            <h3>GC CLIP</h3>
+        </div>
+        <div id="sub-title" class="d-flex" >
+            <h5>Gordon College Classroom Interactive Learners' Presentation</h5>
+        </div>
+        <div id="description" class="d-flex" >
+            <h6>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In molestiae illum neque cum ullam nisi, temporibus voluptate necessitatibus obcaecati. Tenetur ullam eaque sequi architecto totam accusantium quis, porro minus consequuntur.
+            </h6>
+        </div>
+    </div>
+
+    <div id="right-side" class="d-flex justify-content-center align-items-center flex-column">
+        <div id="greet" class='d-flex'>
+            <h4>Welcome Students!</h4>
+        </div>
+        <div id="form-content" class="d-flex">
+            <form class="form-login" [formGroup]="studentLogin" (ngSubmit)="signIn()" class="d-flex justify-content-center align-items-center flex-column">
+                
+                <p>
+                    <mat-form-field class="form-element" floatLabel="never">
+                        <mat-icon id="icon" aria-hidden="false" aria-label="home icon">email</mat-icon>
+                        <input matInput placeholder="" formControlName="email" class="login-form">
+                        <mat-error *ngIf="!studentLogin.controls['email'].valid && studentLogin.controls['email'].touched">
+                          {{ getErrorEmail() }}
+                        </mat-error>
+
+                    </mat-form-field>
+                </p>
+
+                <p>
+                    <mat-form-field class="form-element" floatLabel="never">
+                        <mat-icon id="icon" aria-hidden="false" aria-label="key icon">key</mat-icon>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" class="login-form">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                          <mat-icon id="eye">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="!studentLogin.controls['password'].valid && studentLogin.controls['password'].touched">
+                            {{ getErrorPassword() }}
+                          </mat-error>
+                      </mat-form-field>
+                </p>
+                <div class="text-center">
+                    <mat-checkbox color="primary" formControlName="rememberme"  [checked]="rememberme"> Remember Me</mat-checkbox>
+                </div>
+                <p>
+                    <button mat-raised-button type="submit" [disabled]="!studentLogin.valid" >Login</button>
+                </p>
+              </form>
+        </div>
+
+        
+    </div>
+</div>

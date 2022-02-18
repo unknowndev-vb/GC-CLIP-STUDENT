@@ -1,0 +1,20 @@
+<div id="main" class="fullscreen"></div>
+<div id="black" class="fullscreen"></div>
+
+<div class="d-flex justify-content-center align-items-center" >
+    <mat-card id="progress" class="d-flex justify-content-center">
+        <mat-progress-bar mode="determinate" value="{{percent}}"></mat-progress-bar>
+    </mat-card>
+</div>
+<div *ngFor="let item of slideContents" class="d-flex justify-content-center align-items-center slides">
+    <mat-card [style.background-color] = "presTheme" [style.color] = "presFont" id="card-content" class="d-flex justify-content-left"  @fade>
+        <mat-card-title id="title">{{item.heading_fld}}</mat-card-title>
+        <!-- <mat-card-subtitle>{{currentIndex + 1}} of {{slides.length}}</mat-card-subtitle> -->
+        <mat-card-content>
+            <p class="text-justify" >{{item.paragraph_fld}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>
+    
+
+
