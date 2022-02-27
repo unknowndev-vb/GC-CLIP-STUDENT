@@ -32,14 +32,8 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    this.validateForm()
 
-    this.studentLogin = this._fb.group({
-      email: ['', Validators.email],
-      password: ['', Validators.required],
-      status: ['0'],
-      rememberme: [this.rememberme]
-    })
     if( localStorage.getItem('rememberme')){
       let email = localStorage.getItem('email');
       let decrypted =  CryptoJS.AES.decrypt( localStorage.getItem('password') ||'', 'Abcdefhjklmnopqrstyvwxyz123')
@@ -59,6 +53,16 @@ export class LoginComponent implements OnInit {
     }
   }
 
+
+  validateForm(){
+    let emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    this.studentLogin = this._fb.group({
+      'email': [null, [Validators.required, Validators.pattern(emailregex)]],
+      'password': [null, Validators.required],
+      'status': ['0'],
+      rememberme: [this.rememberme]  
+    });
+  }
 
   getErrorEmail() {
     return this.studentLogin.get('email').hasError('required') ? 'Field is required' :
