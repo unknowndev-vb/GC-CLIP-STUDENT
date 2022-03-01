@@ -25,6 +25,7 @@ export class DashboardComponent implements AfterViewInit {
   contents = [];
   code: string;
   Error: boolean = false;
+  presentation: any;
 
   displayedColumns: string[] = ['position','sName_fld', 'Action'];
   dataSource = new MatTableDataSource<Presentations>();
@@ -64,6 +65,7 @@ export class DashboardComponent implements AfterViewInit {
     this._ds.processData1('history/getSlideHistory/students',  this._us.getUserID(), 2)?.subscribe((res: any)=>{
       let load = this._ds.decrypt(res.d)
       this.Source = load;
+      this.presentation = this.Source;
       this.dataSource = new MatTableDataSource(this.Source); 
       this.dataSource.sort = this.sort;
       console.log(load);

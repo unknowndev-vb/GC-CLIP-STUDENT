@@ -1,3 +1,11 @@
+$polygon: #1BBB94;
+$darkenBlue: #023047;
+$light_gray: #334e5c;
+$button_blue: #0166B3;
+$mid_green: #089e7a;
+$crimson: #ed143d;
+$lime_orange: #FF6633;
+
 h1,h2,h3,h4,h5,h6,p, th, td, .mat-paginator, input, table{
     font-family: 'Quattrocento Sans';
 }
@@ -24,7 +32,7 @@ h1,h2,h3,h4,h5,h6,p, th, td, .mat-paginator, input, table{
     // background-color: #334e5c;
     background: linear-gradient(360deg, hsla(218, 93%, 77%, 1) 0%, hsla(185, 50%, 95%, 1) 100%);
     position: fixed;
-    opacity: 20%;
+    opacity: 40%;
     z-index: -1;
     top: 0;
 }
@@ -37,6 +45,73 @@ h1,h2,h3,h4,h5,h6,p, th, td, .mat-paginator, input, table{
 
 ::ng-deep .mat-snack-bar-container {
     background-color: #334e5c;
+}
+
+::ng-deep{
+
+    .main{
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+
+        .code-container{
+            width: 20rem;
+            background: $polygon;
+            height: 10rem;
+            padding: 10px;
+            flex-direction: column;
+            gap: 6px;
+            border-top-right-radius: 40px;
+            border-bottom-left-radius: 40px;
+
+            #code-input{
+                background: #fff;
+                height: 1.5rem;
+                padding: 10px;
+                width: 15rem;
+                border-radius: 4px;
+                text-align: center;
+                font-size: 12px;
+                text-transform: uppercase;
+                font-weight: 700;
+                color:#000;
+            }
+
+            button#btn-code{
+                background: $lime_orange;
+                color: #fff;
+                width: 10rem;
+                font-size: 0.7em;
+                border: 2px solid #fff;
+                font-family: 'Quattrocento sans';
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+        .cards{
+            mat-card{
+                width: 8rem;
+                height: 10rem;
+                align-items: center;
+                justify-content: center;
+                display: flex!important;
+                &:hover{
+                    cursor: pointer;
+                }
+                
+                p{
+                    color: $crimson;
+                    font-size: 14px;
+                    font-weight: 600;
+                    letter-spacing: 0.1em;
+                    line-height: 1.2em;
+                }
+            }
+        }
+    }
 }
 
 th.mat-sort-header.mat-header-cell.cdk-header-cell.ng-tns-c93-4.cdk-column-position.mat-column-position.ng-star-inserted {

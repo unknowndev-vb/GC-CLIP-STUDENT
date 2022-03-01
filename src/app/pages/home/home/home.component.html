@@ -1,0 +1,38 @@
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      mode="side"
+      opened="true">
+    <!-- <mat-toolbar id = "titleSidenav">Files</mat-toolbar> -->
+    <div class="d-flex justify-content-center align-items-center logo">
+      <img src="../assets/images/Logo/applogo.png" alt="GCCLIP LOGO" height="70" width="auto">
+      <h4>GCCLIP</h4>
+    </div>
+  <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/main" routerLinkActive="active">
+        <mat-icon mat-list-icon>dashboard</mat-icon> Presentation</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <button type="submit" (click)="logout()" mat-icon-button #tooltip="matTooltip"
+        matTooltip="Logout"
+        matTooltipPosition="right"><mat-icon id="power_settings_new">power_settings_new</mat-icon>
+      </button>
+      <div class="user">
+        <span>{{this.user_fn}} - {{this.user_email}}</span>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <app-dashboard></app-dashboard>
+  </mat-sidenav-content>
+</mat-sidenav-container>

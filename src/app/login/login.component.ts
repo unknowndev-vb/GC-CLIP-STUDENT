@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
 
     if(this._user.isUserLoggedIn()){
 
-       this._router.navigate(['/main']);
+       this._router.navigate(['/home']);
     }
   }
 
@@ -93,7 +93,7 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('password', password)
           }
 
-          this._router.navigate(['/main']);
+          this._router.navigate(['/home']);
           this._snackBar.open("Welcome "+ this._user.getFullname()+ "!", "", {
               duration: 3000,
             });

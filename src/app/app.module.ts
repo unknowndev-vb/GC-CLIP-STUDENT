@@ -5,10 +5,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { MainComponent } from './pages/home/main/main.component';
 import { DashboardComponent } from './pages/home/dashboard/dashboard.component';
-import { SidebarComponent } from './pages/home/sidebar/sidebar.component';
-import { HeaderComponent } from './pages/home/header/header.component';
 import { PresentationComponent } from './pages/presentation/presentation/presentation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
@@ -20,6 +17,13 @@ import { HistoryComponent } from './pages/presentation/history/history.component
 
 //Material Carousel
 import { MatCarouselModule } from '@ngbmodule/material-carousel';
+import { HomeComponent } from './pages/home/home/home.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 
 
@@ -29,12 +33,10 @@ const config: SocketIoConfig = { url: 'http://localhost:3001', options: { autoCo
   declarations: [
     AppComponent,
     LoginComponent,
-    MainComponent,
     DashboardComponent,
-    SidebarComponent,
-    HeaderComponent,
     PresentationComponent,
-    HistoryComponent
+    HistoryComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,13 @@ const config: SocketIoConfig = { url: 'http://localhost:3001', options: { autoCo
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCarouselModule.forRoot()
+    MatCarouselModule.forRoot(),
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
