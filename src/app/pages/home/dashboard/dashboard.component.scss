@@ -68,8 +68,7 @@ h1,h2,h3,h4,h5,h6,p, th, td, .mat-paginator, input, table{
             padding: 10px;
             flex-direction: column;
             gap: 6px;
-            border-top-right-radius: 40px;
-            border-bottom-left-radius: 40px;
+            border-radius: 4px;
 
             #code-input{
                 background: #fff;
