@@ -35,6 +35,13 @@ h1,h2,h3,h4,h5,h6,p, th, td, .mat-paginator, input, table{
     opacity: 40%;
     z-index: -1;
     top: 0;
+
+    img{
+        height: 20rem;
+        opacity: 20%;
+        position: fixed;
+        right: -120px;
+    }
 }
 
 ::ng-deep .mat-simple-snackbar {
@@ -92,261 +99,72 @@ h1,h2,h3,h4,h5,h6,p, th, td, .mat-paginator, input, table{
 
 
         .cards{
-            mat-card{
-                width: 8rem;
-                height: 10rem;
-                align-items: center;
-                justify-content: center;
-                display: flex!important;
-                &:hover{
-                    cursor: pointer;
-                }
-                
-                p{
-                    color: $crimson;
-                    font-size: 14px;
-                    font-weight: 600;
-                    letter-spacing: 0.1em;
-                    line-height: 1.2em;
-                }
-            }
-        }
-    }
-}
 
-th.mat-sort-header.mat-header-cell.cdk-header-cell.ng-tns-c93-4.cdk-column-position.mat-column-position.ng-star-inserted {
-    width: 5vw !important;
-}
-
-#container{
-    justify-content: space-around;
-    flex-direction: row-reverse;
-}
-
-#code-content{
-    width: 25%;
-
-    #code-box{
-        clip-path: polygon(0% 0%, 100% 0, 100% 85%, 50% 100%, 0 85%);
-        gap: 12px;
-        width: 100%;
-        height: 270px;
-        box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.1);
-        background-color: #48C9B0;
-        // border-radius: 15px;
-        flex-direction: column;
-        
-
-        input{
-            width: 70%;
-            // margin-right: 1rem;
-            text-align: center;
-            height: 40px;
-            border-radius: 0;
-            padding: 10px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: #334e5c;
-            background: #fff;
-            border: 2px solid #fff;
-            box-sizing: border-box;
-            text-transform: uppercase;
-            box-shadow: 3px 2px 3px 0px rgb(0 0 0 / 30%);
-            &:focus-visible{
-                // border: 2px solid #007BFF;
-                outline: none;
-            }
-        }
-
-        button{
-            padding: 2px 0;
-            width: 70%;
-            border-radius: 0;
-            color: #fff;
-            background: #711CB2 ;
-            border: 3px solid #fff;
-            box-shadow: 4px 4px 0px 0px rgba(50, 50, 50, 1);
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            font-weight: bold;
-            font-family: 'Poppins';
-            margin-top: -4px;
-            &:hover{
-                background-color: #fb8400;
-            }
-        }
-    }
-
-    
-}
-
-
-#presentation{
-    width: 65%;
-    // margin-top: 40px;
-
-        #table{
-            mat-card{
+            mat-card#card-container{
                 width: 100%;
-                #top{
-                    gap: 90px;
-            
-                    #left-side{
-                        gap: 10px;
+
+                mat-card-header{
+                    align-items: center;
+                    padding: 5px;
+                    border: 1px solid #eee;
+                    margin-bottom: 10px;
+
+                    .mat-card-avatar.avatar {
+                        background: #eee;
+                        border-radius: 2px;
                         
-                        #polygon{
-                            clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-                            // background: #007BFF;
-                            // background: linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(274, 73%, 40%, 1) 100%);
-                            padding: 15px;
-                            background: #711CB2;
+                        mat-icon{
+                            height: 39px;
+                            width: 39px;
+                            font-size: 40px;
+                            color: $mid_green;
                         }
-                        ::ng-deep{
-                            mat-icon{
-                                // color: #219ebc;
-                                color: #fff;
-                                height: 45px;
-                                width: 45px;
-                                font-size: 45px;
-                                padding-top: 7px;
-                            }
-                            mat-card-title{
-                                margin: 0;
-                                font-family: 'Quattrocento Sans';
-                                font-weight: 700;
-                                font-variant: small-caps;
-                                font-size: 2.5em;
-                                // color: #334e5c;
-                                // color: #711CB2;
-                                color: #0166B3;
-                            }
-                            
-                        }
-                        
                     }
-                    // #search{
-                    //     width: 90%;
-
-                        input#mat-input-3{
-                            padding: 8px;
-                            font-family: 'Quattrocento Sans';
-                            border: 2px solid #1BBB94;
-                            border-radius: 0;
-                            box-shadow: 3px 2px 3px 0px rgb(0 0 0 / 10%);
-                        }
-                    // }
+                    mat-card-title{
+                        font-family: "Quattrocento Sans";
+                        color: #FF6633;
+                        margin-bottom: 0;
+                        font-weight: 700;
+                        letter-spacing: 0.1em;
+                    }
                 }
-    
-                ::ng-deep mat-card-content{
-                    width: 100%;
-                    margin-top: 46px;
 
-                        tr.mat-header-row{
-                            background: #0166B3 ;
-                        }
-
-                        th{
-                            // color: #334e5c;
-                            font-family: 'Quattrocento Sans';
-                            letter-spacing: 0.1em;
-                            font-variant: small-caps;
-                            color: #fff;
-                            font-size: 1em;
-                            font-weight: 700;
-                        }
-                        td{
-                            color: #000;
-                            font-family: 'Quattrocento Sans';
-                            font-weight: bold;
-                            letter-spacing: 0.1em;
-                            font-size: 1.1em;
-                        }
+                mat-card#message{
+                    font-family: "Quattrocento Sans";
                 }
-                ::ng-deep .mat-divider{
-                    // border-color: #007BFF;
-                    margin: 16px 0;
+
+                mat-card#history{
+                    width: 8rem;
+                    height: 10rem;
+                    align-items: center;
+                    justify-content: center;
+                    display: flex!important;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    
+                    p{
+                        color: $lime_orange;
+                        font-size: 14px;
+                        font-weight: 600;
+                        letter-spacing: 0.1em;
+                        line-height: 1.2em;
+                    }
                 }
             }
-            
         }
+    }
 }
 
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
-    #code-content{
-
-        #code-box{
-            width: 90vw;
-
-            #search input{
-                width: 90vw;
-            }
-        }
-    }
-
-    #presentation{
-
-        // #top-content{
-        //     flex-direction: column;
-        //     align-items: flex-start !important;
-        //     padding: 0 20px;
-
-        //     #search {
-        //         input {
-        //             width: 44vw!important;
-        //         }
-        //     }
-        // }
-
-        #table{
-
-            mat-card{
-                width: 100%;
-            }
-        }
-    }
+    
+    
 }
 @media screen and (max-width: 768px) and (orientation: landscape){
-    #code-content{
-
-        #code-box{
-            width: 65vw;
-            height: 30vh;
-        }
-        
-    }
-
-    #presentation{
-        #top-content{
-            justify-content: space-between;
-            padding: 0 14px;
-        }
-
-        #table{
-
-            mat-card{
-                width: 100vw;
-            }
-        }
-    }
+    
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    #code-content{
-
-        #code-box{
-            width: 40vw;
-            height: 20vh;
-        }
-        
-    }
-
-    #presentation{
-        #table{
-
-            mat-card{
-                width: 70%;
-            }
-        }
-    }
+    
 }

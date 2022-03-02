@@ -1,5 +1,7 @@
 <div id="main" class="fullscreen"></div>
-<div id="black" class="fullscreen"></div>
+<div id="black" class="fullscreen">
+  <img src="../assets/images/Logo/applogo.png" alt="GCCLIP LOGO">
+</div>
 
 <!-- <div class="d-flex" id="container">
 
@@ -79,10 +81,29 @@
   </div>
   
   <div class="d-flex cards">
-    <mat-card *ngFor="let data of presentation" (click)="viewPresentation(data.sId_fld)">
-      <p>
-        {{data.sName_fld}}
-      </p>
+    
+    <mat-card id="card-container">
+
+      <mat-card-header>
+        <div mat-card-avatar class="avatar">
+          <mat-icon>playlist_play</mat-icon>
+        </div>
+        <mat-card-title>Presentation List</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-card id="message" *ngIf="this.presentation == ''">
+          No available presentation. Join first or wait for further instructions.
+        </mat-card>
+        <mat-card id="history" *ngFor="let data of presentation" (click)="viewPresentation(data.sId_fld)">
+          <p>
+            {{data.sName_fld}}
+          </p>
+        </mat-card>
+      </mat-card-content>
+
     </mat-card>
+
   </div>
+
 </div>
